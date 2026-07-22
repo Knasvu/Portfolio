@@ -554,7 +554,7 @@ footer{
     <div class="contact-links">
       <a href="https://github.com/Knasvu" class="btn btn-line" target="_blank" rel="noopener noreferrer">github</a>
       <a href="https://www.linkedin.com/in/lorena-alves-730488398/" class="btn btn-line" target="_blank" rel="noopener noreferrer">linkedin</a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lorenaalvesdossantos271@gmail.com" class="btn btn-line" target="_blank" rel="noopener noreferrer">email</a>
+      <a href="mailto:lorenaalvesdossantos271@gmail.com" class="btn btn-line" id="email-btn" onclick="copyEmail(this)">email</a>
     </div>
   </div>
 </section>
@@ -567,6 +567,16 @@ const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
 },{threshold:0.1});
 els.forEach(el=>io.observe(el));
+
+function copyEmail(el){
+  const email='lorenaalvesdossantos271@gmail.com';
+  const original=el.textContent;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(email).catch(()=>{});
+  }
+  el.textContent='email copiado!';
+  setTimeout(()=>{el.textContent=original;},2000);
+}
 </script>
 
 </body>
