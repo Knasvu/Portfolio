@@ -164,6 +164,11 @@ section{padding:4.5rem 3rem;max-width:740px;margin:0 auto}
 }
 .proj:hover .proj-name{color:var(--bx-txt)}
 .proj-desc{font-size:12px;color:var(--mut);line-height:1.65}
+.proj-meta{
+  display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:.6rem;
+  font-family:var(--mono);font-size:10px;color:var(--mut);letter-spacing:.03em;
+}
+.proj-meta span{color:var(--bd2)}
 .badge{
   font-family:var(--mono);font-size:9px;
   padding:.25rem .7rem;border-radius:999px;
@@ -173,6 +178,94 @@ section{padding:4.5rem 3rem;max-width:740px;margin:0 auto}
 .badge-wip{background:var(--bx-glow);color:var(--bx-txt);border:1px solid var(--bx-dim)}
 .badge-ok{background:#071410;color:var(--green-txt);border:1px solid #1a4030}
 .badge-next{background:var(--s3);color:var(--mut);border:1px solid var(--bd)}
+
+.courses-category{margin-bottom:2.4rem}
+.courses-category:last-child{margin-bottom:0}
+.course-cat-title{
+  font-family:var(--sans);font-size:13px;font-weight:500;color:var(--bx-light);
+  letter-spacing:.04em;margin-bottom:1.1rem;display:flex;align-items:center;gap:.5rem;
+}
+.course-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:start}
+@media(max-width:650px){.course-grid{grid-template-columns:1fr}}
+.course-card{
+  background:var(--s1);border:1px solid var(--bd);border-radius:14px;
+  padding:1.6rem 1.7rem;
+  transition:border-color .3s ease,background .3s ease,box-shadow .3s ease;
+}
+.course-card:hover{border-color:var(--bx-dim);background:var(--s2);box-shadow:0 14px 34px rgba(0,0,0,.28)}
+.course-planned{opacity:.82}
+.course-card:hover.course-planned{opacity:1}
+.course-card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:1rem;flex-wrap:wrap;
+}
+.course-name{font-family:var(--display);font-size:1.05rem;color:var(--txt);font-weight:400;margin-bottom:.35rem}
+.course-inst{font-family:var(--mono);font-size:10px;color:var(--mut);letter-spacing:.05em}
+.course-hours{font-family:var(--mono);font-size:10px;color:var(--mut);margin-top:.2rem}
+.course-more-hint{
+  font-family:var(--mono);font-size:9px;color:var(--mut);letter-spacing:.08em;
+  text-transform:uppercase;margin-top:.9rem;opacity:.7;
+  transition:opacity .25s ease;
+}
+.course-card:hover .course-more-hint{opacity:0;height:0;margin:0}
+.course-card-details{
+  max-height:0;opacity:0;overflow:hidden;margin-top:0;
+  transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease .05s,margin-top .5s ease;
+}
+.course-card:hover .course-card-details,
+.course-card:focus-within .course-card-details{
+  max-height:700px;opacity:1;margin-top:1.1rem;
+}
+.course-skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.course-skill{
+  font-family:var(--mono);font-size:10px;color:var(--soft);
+  background:var(--s2);border:1px solid var(--bd);
+  padding:.32rem .7rem;border-radius:999px;
+}
+.course-card:hover .course-skill{border-color:var(--bd2)}
+.course-note{
+  font-size:12.5px;color:var(--soft);line-height:1.75;font-weight:300;
+  border-top:1px solid var(--bd);padding-top:1rem;
+}
+.course-note strong{color:var(--bx-txt);font-weight:500}
+.course-link{
+  font-family:var(--mono);font-size:10px;color:var(--bx-txt);
+  border-bottom:1px solid var(--bx-dim);padding-bottom:1px;
+  display:inline-block;margin-top:.8rem;transition:color .2s ease;
+}
+.course-link:hover{color:var(--bx-light)}
+
+.status-card{
+  background:var(--s1);border:1px solid var(--bd);border-radius:14px;
+  padding:1.7rem 1.9rem;
+  transition:border-color .25s ease,background .25s ease;
+}
+.status-card:hover{border-color:var(--bx-dim);background:var(--s2)}
+.status-card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap;
+}
+.status-dot-live{
+  font-family:var(--mono);font-size:10px;color:var(--green-txt);
+  letter-spacing:.05em;display:flex;align-items:center;gap:.4rem;
+}
+.status-note{
+  font-size:12.5px;color:var(--soft);line-height:1.75;font-weight:300;
+  border-top:1px solid var(--bd);padding-top:1rem;margin-top:.2rem;
+}
+
+.journey{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.journey-step{
+  font-family:var(--mono);font-size:12.5px;color:var(--soft);
+  background:var(--s1);border:1px solid var(--bd);border-radius:999px;
+  padding:.6rem 1.3rem;transition:border-color .2s ease,color .2s ease,background .2s ease;
+}
+.journey-step.done{color:var(--bx-txt);border-color:var(--bx-dim)}
+.journey-step:hover{color:var(--txt);border-color:var(--bd2);background:var(--s2)}
+.journey-arrow{
+  font-family:var(--mono);font-size:12px;color:var(--bd2);
+  padding:.5rem 0 .5rem 1.7rem;line-height:1;
+}
 
 .contact-box{
   background:var(--s1);border:1px solid var(--bd);
@@ -202,7 +295,9 @@ footer{
   <ul class="nav-links">
     <li><a href="#sobre">sobre</a></li>
     <li><a href="#habilidades">habilidades</a></li>
+    <li><a href="#ferramentas">ferramentas</a></li>
     <li><a href="#projetos">projetos</a></li>
+    <li><a href="#cursos">cursos</a></li>
     <li><a href="#contato">contato</a></li>
   </ul>
 </nav>
@@ -213,9 +308,9 @@ footer{
     Olá! Eu sou a
     <span class="h1-name">Lorena.</span>
   </h1>
-  <div class="hero-role">Cybersecurity enthusiast · Em formação</div>
+  <div class="hero-role">TI · Suporte · Cybersecurity · Em formação</div>
   <p class="hero-sub">
-    Aprendendo programação do zero com foco em segurança da informação, focada a entender como os sistemas funcionam de verdade.
+    Aprendendo tecnologia do zero com foco em suporte técnico, infraestrutura e segurança da informação, buscando entender como os sistemas funcionam de verdade.
   </p>
   <div class="btns">
     <a href="#projetos" class="btn btn-bx">Ver Projetos</a>
@@ -228,8 +323,17 @@ footer{
 <section id="sobre" class="fade-in">
   <div class="lbl">Sobre Mim</div>
   <p class="about-p">
-    Sou apaixonada por tecnologia e estou construindo minha carreira com foco em <em>Cibersegurança</em>. Minha trajetória começa pelo entendimento sólido dos fundamentos HTML, CSS, lógica e redes, porque sei que segurança de verdade começa pelo básico.<br><br>
+    Sou apaixonada por tecnologia e estou construindo minha carreira com foco em <em>TI, Suporte e Cibersegurança</em>. Minha trajetória começa pela construção de uma base sólida em programação, sistemas operacionais, redes e segurança da informação.<br><br>
     Tenho inglês avançado para leitura técnica e aprendo rápido quando o assunto me interessa. E tecnologia sempre me interessa.
+  </p>
+</section>
+
+<hr class="div">
+
+<section id="objetivo" class="fade-in">
+  <div class="lbl">Objetivo profissional</div>
+  <p class="about-p">
+    Busco minha primeira oportunidade na área de Tecnologia da Informação, onde eu possa aplicar meus conhecimentos, desenvolver minhas habilidades técnicas e continuar aprendendo através de desafios reais.
   </p>
 </section>
 
@@ -243,10 +347,12 @@ footer{
       <div class="skill-list">
         <div class="skill-row"><span class="skill-dot"></span>Inglês avançado</div>
         <div class="skill-row"><span class="skill-dot"></span>HTML5 e CSS3</div>
-        <div class="skill-row"><span class="skill-dot"></span>Ferramentas e sistemas digitais</div>
-        <div class="skill-row"><span class="skill-dot"></span>Instalação e config. de software</div>
-        <div class="skill-row"><span class="skill-dot"></span>Conhecimento em informática</div>
-        <div class="skill-row"><span class="skill-dot"></span>Aprendizado rápido de tecnologias</div>
+        <div class="skill-row"><span class="skill-dot"></span>Python (em desenvolvimento)</div>
+        <div class="skill-row"><span class="skill-dot"></span>Linux (em aprendizado)</div>
+        <div class="skill-row"><span class="skill-dot"></span>Fundamentos de redes (em aprendizado)</div>
+        <div class="skill-row"><span class="skill-dot"></span>Sistemas Windows</div>
+        <div class="skill-row"><span class="skill-dot"></span>Instalação e configuração de software</div>
+        <div class="skill-row"><span class="skill-dot"></span>Manutenção básica de computadores</div>
       </div>
     </div>
     <div>
@@ -266,6 +372,19 @@ footer{
 
 <hr class="div">
 
+<section id="ferramentas" class="fade-in">
+  <div class="lbl">Ferramentas</div>
+  <div class="skill-list">
+    <div class="skill-row"><span class="skill-dot"></span>Visual Studio Code — familiaridade</div>
+    <div class="skill-row"><span class="skill-dot"></span>Git e GitHub — em aprendizado</div>
+    <div class="skill-row"><span class="skill-dot"></span>Windows — familiaridade</div>
+    <div class="skill-row"><span class="skill-dot"></span>Linux — em aprendizado</div>
+    <div class="skill-row"><span class="skill-dot"></span>Microsoft Office — familiaridade</div>
+  </div>
+</section>
+
+<hr class="div">
+
 <section id="projetos" class="fade-in">
   <div class="lbl">projetos</div>
   <div class="proj-list">
@@ -273,6 +392,7 @@ footer{
       <div>
         <div class="proj-name">Portfólio pessoal</div>
         <div class="proj-desc">Este site, construído com HTML e CSS, documentando minha evolução como dev. Irei atualizar conforme o tempo.</div>
+        <div class="proj-meta"><span>Tecnologias:</span> HTML, CSS
       </div>
       <span class="badge badge-wip">em progresso</span>
     </div>
@@ -280,13 +400,15 @@ footer{
       <div>
         <div class="proj-name">Exercícios de lógica</div>
         <div class="proj-desc">Desafios de lógica de programação resolvidos durante os estudos iniciais.</div>
+        <div class="proj-meta"><span>Tecnologias:</span> a definir
       </div>
       <span class="badge badge-next">Em Breve</span>
     </div>
     <div class="proj">
       <div>
-        <div class="proj-name">Estudos em Cyber Security</div>
-        <div class="proj-desc">Anotações, labs e materiais sobre fundamentos de segurança da informação.</div>
+        <div class="proj-name">Fundamentos de Segurança da Informação</div>
+        <div class="proj-desc">Anotações, estudos e práticas relacionadas aos conceitos iniciais de segurança, ameaças digitais e boas práticas.</div>
+        <div class="proj-meta"><span>Tecnologias:</span> a definir
       </div>
       <span class="badge badge-next">Em Breve</span>
     </div>
@@ -295,14 +417,144 @@ footer{
 
 <hr class="div">
 
+<section id="estudando" class="fade-in">
+  <div class="lbl">Atualmente estudando</div>
+  <div class="status-card">
+    <div class="status-card-head">
+      <div>
+        <div class="course-name">🐍 Python Essentials 1</div>
+        <div class="course-inst">Cisco Networking Academy</div>
+      </div>
+      <span class="status-dot-live">Em andamento</span>
+    </div>
+    <p class="status-note">Construindo minha base em programação, lógica e automação utilizando Python, desenvolvendo conhecimentos que podem ser aplicados em suporte, infraestrutura e segurança.</p>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="cursos" class="fade-in">
+  <div class="lbl">cursos e certificações</div>
+
+  <div class="courses-category">
+    <div class="course-cat-title">🖥️ Desenvolvimento</div>
+
+    <div class="course-grid">
+      <div class="course-card">
+        <div class="course-card-head">
+          <div>
+            <div class="course-name">🐍 Python Essentials 1</div>
+            <div class="course-inst">Cisco Networking Academy</div>
+          </div>
+          <span class="badge badge-wip">em andamento</span>
+        </div>
+        <div class="course-more-hint">passe o mouse para ver detalhes</div>
+        <div class="course-card-details">
+          <div class="course-skills">
+            <span class="course-skill">Lógica de programação</span>
+            <span class="course-skill">Variáveis e tipos de dados</span>
+            <span class="course-skill">Operadores</span>
+            <span class="course-skill">Estruturas condicionais</span>
+            <span class="course-skill">Estruturas de repetição</span>
+            <span class="course-skill">Funções</span>
+            <span class="course-skill">Listas e manipulação de dados</span>
+            <span class="course-skill">Fundamentos da linguagem Python</span>
+          </div>
+          <p class="course-note"><strong>Por que isso importa:</strong> conhecimentos fundamentais para desenvolver automações, compreender sistemas e criar uma base sólida para atuar em tecnologia.</p>
+          <a href="https://www.netacad.com/courses/python-essentials-1" class="course-link" target="_blank" rel="noopener noreferrer">ver curso →</a>
+        </div>
+      </div>
+
+      <div class="course-card course-planned">
+        <div class="course-card-head">
+          <div>
+            <div class="course-name">🐍 Python Essentials 2</div>
+            <div class="course-inst">Cisco Networking Academy</div>
+          </div>
+          <span class="badge badge-next">planejado</span>
+        </div>
+        <div class="course-more-hint">passe o mouse para ver detalhes</div>
+        <div class="course-card-details">
+          <div class="course-skills">
+            <span class="course-skill">Programação orientada a objetos</span>
+            <span class="course-skill">Módulos e pacotes</span>
+            <span class="course-skill">Tratamento de exceções</span>
+            <span class="course-skill">Manipulação de arquivos</span>
+            <span class="course-skill">Conceitos avançados de Python</span>
+          </div>
+          <p class="course-note"><strong>Por que isso importa:</strong> aprofunda a base em Python com POO e tratamento de exceções, essencial para scripts mais robustos e automações confiáveis.</p>
+          <a href="https://www.netacad.com/courses/python-essentials-2" class="course-link" target="_blank" rel="noopener noreferrer">ver curso →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="courses-category">
+    <div class="course-cat-title">🌐 Infraestrutura e Redes</div>
+
+    <div class="course-grid">
+      <div class="course-card course-planned">
+        <div class="course-card-head">
+          <div>
+            <div class="course-name">🌐 Networking Essentials</div>
+            <div class="course-inst">Cisco Networking Academy</div>
+          </div>
+          <span class="badge badge-next">planejado</span>
+        </div>
+        <div class="course-more-hint">passe o mouse para ver detalhes</div>
+        <div class="course-card-details">
+          <div class="course-skills">
+            <span class="course-skill">Fundamentos de redes</span>
+            <span class="course-skill">Endereçamento IP</span>
+            <span class="course-skill">Protocolos de comunicação</span>
+            <span class="course-skill">Equipamentos de rede</span>
+            <span class="course-skill">Conceitos de infraestrutura</span>
+            <span class="course-skill">Diagnóstico básico de conexão</span>
+          </div>
+          <p class="course-note"><strong>Por que isso importa:</strong> redes são a base de qualquer vaga de suporte técnico ou infraestrutura. Diagnosticar conexões e entender IP é habilidade essencial em nível júnior.</p>
+          <a href="https://www.netacad.com/pt/courses/networking-essentials?courseLang=pt-BR" class="course-link" target="_blank" rel="noopener noreferrer">ver curso →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="courses-category">
+    <div class="course-cat-title">🔐 Segurança da Informação</div>
+
+    <div class="course-grid">
+      <div class="course-card course-planned">
+        <div class="course-card-head">
+          <div>
+            <div class="course-name">🔐 Cybersecurity Essentials</div>
+            <div class="course-inst">Cisco Networking Academy</div>
+          </div>
+          <span class="badge badge-next">planejado</span>
+        </div>
+        <div class="course-more-hint">passe o mouse para ver detalhes</div>
+        <div class="course-card-details">
+          <div class="course-skills">
+            <span class="course-skill">Fundamentos de segurança da informação</span>
+            <span class="course-skill">Ameaças digitais</span>
+            <span class="course-skill">Vulnerabilidades</span>
+            <span class="course-skill">Boas práticas de proteção</span>
+            <span class="course-skill">Segurança em ambientes corporativos</span>
+          </div>
+          <p class="course-note"><strong>Por que isso importa:</strong> primeiro passo formal na área que pretendo seguir. Compreender ameaças e vulnerabilidades cria a base para me aprofundar em cibersegurança.</p>
+          <a href="https://www.netacad.com/pt/courses/cybersecurity-essentials?courseLang=pt-BR" class="course-link" target="_blank" rel="noopener noreferrer">ver curso →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contato" class="fade-in">
   <div class="lbl">contato</div>
   <div class="contact-box">
-    <p class="contact-intro">estou sempre aberta a fazer conexões, trocar conhecimentos, conversar sobre tecnologia e o aprendizado de quem está iniciando na área.</p>
+    <p class="contact-intro"> Estou em busca de oportunidades para iniciar minha carreira em tecnologia, aprender com novos desafios e conhecer pessoas da área. Fique à vontade para entrar em contato!</p>
     <div class="contact-links">
       <a href="https://github.com/Knasvu" class="btn btn-line" target="_blank" rel="noopener noreferrer">github</a>
       <a href="https://www.linkedin.com/in/lorena-alves-730488398/" class="btn btn-line" target="_blank" rel="noopener noreferrer">linkedin</a>
-      <a href="https://wa.me/5511996375240" class="btn btn-line" target="_blank" rel="noopener noreferrer">whatsapp</a>
+      <a href="mailto:lorenaalvesdossantos271@gmail.com" class="btn btn-line">email</a>
     </div>
   </div>
 </section>
